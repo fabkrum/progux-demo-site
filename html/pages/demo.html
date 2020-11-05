@@ -10,6 +10,9 @@
 		-o-background-size: cover;
 		background-size: cover;
 	}
+	html.connectionSpeed-slow #introduction {
+		background: whitesmoke;
+	}
 	h1 {
 		font-size: 25px;
 	}
@@ -234,6 +237,16 @@
 </section>
 
 <script>
+	const progUxScript = document.createElement('script');
+	progUxScript.type = 'text/javascript';
+	progUxScript.src = 'core/dev-bundle.js';
+	document.getElementsByTagName('head')[0].appendChild(progUxScript);
+
+	const progUxStyle = document.createElement('link');
+	progUxStyle.rel = 'stylesheet';
+	progUxStyle.href = 'core/settingsModal.css';
+	document.getElementsByTagName('head')[0].appendChild(progUxStyle);
+	
 	document.querySelectorAll('.button-github').forEach((el) => {
 		el.onclick = () => {
 			window.open('https://source.int.netcentric.biz/git/projects/LABS/repos/progressive-user-experience-framework/browse', '_blank');
