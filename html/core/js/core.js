@@ -1,5 +1,5 @@
 import { utils } from './utils.js';
-import { routes } from './../js/routes.js';
+import { routes } from '../../js/routes.js';
 
 export const core = {
 	init: async () => {

@@ -1,4 +1,4 @@
-import { utils } from './../core/utils.js';
+import { utils } from '../core/js/utils.js';
 /* global vSettings */
 
 export const routes = {
