@@ -4,16 +4,16 @@ const fs = require('fs');
 const archiver = require('archiver');
 
 module.exports = {
-	entry: './html/js/script.js',
+	entry: './src/js/script.js',
 	output: {
 		filename: 'script.min.js',
-		path: path.resolve(__dirname, '../docs/js/'),
+		path: path.resolve(__dirname, '../dist/js/'),
 	},
 	plugins: [
 		new CopyPlugin({
 			patterns: [
-				{ from: path.resolve(__dirname, '../docs/js/routes_master.js'), to: path.resolve(__dirname, '../docs/js/routes.js') },
-				{ from: path.resolve(__dirname, '../html'), to: path.resolve(__dirname, '../docs') },
+				{ from: path.resolve(__dirname, '../dist/js/routes_master.js'), to: path.resolve(__dirname, '../dist/js/routes.js') },
+				{ from: path.resolve(__dirname, '../src'), to: path.resolve(__dirname, '../dist') },
 			],
 			options: {
 				concurrency: 100,
@@ -33,7 +33,7 @@ module.exports = {
 					});
 				*/
 					console.log('Zip up html directory to dist/proguxDemo.zip');
-					const output = fs.createWriteStream(path.resolve(__dirname, '../docs/proguxDemo.zip'));
+					const output = fs.createWriteStream(path.resolve(__dirname, '../dist/proguxDemo.zip'));
 					const archive = archiver('zip', {
 						zlib: { level: 9 } // Sets the compression level.
 					});
@@ -41,7 +41,7 @@ module.exports = {
 						console.log(archive.pointer() + ' total bytes');
 					});
 					archive.pipe(output);
-					archive.directory(path.resolve(__dirname, '../html'), false).finalize();
+					archive.directory(path.resolve(__dirname, '../src'), false).finalize();
 				});
 			}
 		}

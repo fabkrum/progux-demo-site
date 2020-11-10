@@ -3,7 +3,7 @@ const CopyPlugin = require('copy-webpack-plugin');
 const fs = require('fs');
 
 module.exports = {
-	entry: './html/js/script.js',
+	entry: './src/js/script.js',
 	output: {
 		filename: 'script.min.js',
 		path: path.resolve(__dirname, '../dist/js/'),
@@ -11,7 +11,7 @@ module.exports = {
 	plugins: [
 		new CopyPlugin({
 			patterns: [
-				{ from: path.resolve(__dirname, '../html'), to: path.resolve(__dirname, '../dist') },
+				{ from: path.resolve(__dirname, '../src'), to: path.resolve(__dirname, '../dist') },
 			],
 			options: {
 				concurrency: 100,

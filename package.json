@@ -5,7 +5,7 @@
   "main": "js/script.js",
   "scripts": {
     "dev": "node tools/dev.js",
-    "lint": "eslint html/*/*.js",
+    "lint": "eslint src/*/*.js",
     "build": "npx webpack --config tools/webpack.build.js",
     "devdocs": "node tools/dev.js docs",
     "docs": "npx webpack --config tools/webpack.docs.js"
@@ -29,9 +29,12 @@
     "watch": "^1.0.2"
   },
   "devDependencies": {
+    "@11ty/eleventy": "^0.11.1",
+    "@webpack-cli/init": "^1.0.3",
     "eslint": "^7.2.0",
     "eslint-config-airbnb-base": "^14.2.0",
     "eslint-plugin-import": "^2.21.2",
+    "webpack": "^5.4.0",
     "webpack-cli": "^4.2.0"
   }
 }

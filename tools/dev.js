@@ -10,10 +10,10 @@ const opn = require('opn');
 
 const app = express();
  
-let publicDir = path.join(__dirname, '../html');
+let publicDir = path.join(__dirname, '../src');
 
-if (process.argv[2] && process.argv[2] === 'docs') {
-	publicDir = path.join(__dirname, '../docs');
+if (process.argv[2] && process.argv[2] === 'dist') {
+	publicDir = path.join(__dirname, '../dist');
 }
  
 app.set('port', process.env.PORT || 8000);
